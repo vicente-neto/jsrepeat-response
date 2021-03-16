@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container-fluid">
+    <h1>Gerando uma lista!</h1>
+  <p>Crie uma lista de ícones de acordo com o número obtido: <strong id="number"></strong></p>
+  <p class="font-weight-lighter">Note: O valor é gerado através de uma requisição simples para https://polar-taiga-94967.herokuapp.com/.</p>
+  <p class="font-weight-lighter">Note: A lista recebe apenas um item, modifique para que seja criado itens repetidos de acordo com o número obtido!</p>
+  <ul id="lista" class="list-group list-group-horizontal"></ul>
+
+<script src="ajax.js"></script>
+<script>
+    /********************************************************************/
+    function criarLista(number){
+        // O valor obtido!
+        document.getElementById("number").innerHTML=number;
+        // A lista vazia!
+        var ul = document.getElementById("lista");
+
+        for(let i=0;i<number;i++){
+          var li = document.createElement("li");
+          li.classList.add("list-group-item","fas","fa-user");
+          ul.appendChild(li);
+        }
+
+    }
+    /********************************************************************/
+    /*
+        Criei um appweb que retorna apenas um valor entre 0 e 100: 
+        https://polar-taiga-94967.herokuapp.com/
+        Basta alterar a função criarLista para criar ícones de acordo com o valor
+        obtido e repassado como parametro!
+    */
+    var request = new Request('https://polar-taiga-94967.herokuapp.com/',criarLista);
+</script>
+</body>
+</html>
