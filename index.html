@@ -10,7 +10,7 @@
 
 <div class="container-fluid">
     <h1>Gerando uma lista!</h1>
-  <p>Crie uma lista de ícones de acordo com o número obtido: <strong id="number"></strong></p>
+  <p>Crie uma lista de ícones de acordo com o número obtido: <strong id="numbe"></strong></p>
   <p class="font-weight-lighter">Note: O valor é gerado através de uma requisição simples para https://polar-taiga-94967.herokuapp.com/.</p>
   <p class="font-weight-lighter">Note: A lista recebe apenas um item, modifique para que seja criado itens repetidos de acordo com o número obtido!</p>
   <ul id="lista" class="list-group list-group-horizontal"></ul>
@@ -24,7 +24,7 @@
         // A lista vazia!
         var ul = document.getElementById("lista");
 
-        
+
         for(let i=0;i<number;i++){
           var li = document.createElement("li");
           li.classList.add("list-group-item","fas","fa-user");
